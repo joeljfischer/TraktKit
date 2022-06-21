@@ -12,7 +12,7 @@ public typealias RawJSON = [String: Any] // Dictionary
 
 // MARK: - TV & Movies
 
-public struct ID: Codable, Hashable {
+public struct ProviderIds: Codable, Hashable {
     public let trakt: Int
     public let slug: String
     public let tvdb: Int?

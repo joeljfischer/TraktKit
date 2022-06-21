@@ -204,7 +204,6 @@ extension TraktManager {
             default:
                 throw TraktError.unhandled(httpResponse)
             }
-            return
         }
     }
     

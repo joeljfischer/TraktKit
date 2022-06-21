@@ -12,7 +12,7 @@ public struct TraktMovie: Codable, Hashable {
     // Extended: Min
     public let title: String
     public let year: Int?
-    public let ids: ID
+    public let ids: ProviderIds
     
     // Extended: Full
     public let tagline: String?
@@ -53,7 +53,7 @@ public struct TraktMovie: Codable, Hashable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         title = try container.decode(String.self, forKey: CodingKeys.title)
         year = try container.decodeIfPresent(Int.self, forKey: CodingKeys.year)
-        ids = try container.decode(ID.self, forKey: CodingKeys.ids)
+        ids = try container.decode(ProviderIds.self, forKey: CodingKeys.ids)
 
         tagline = try container.decodeIfPresent(String.self, forKey: CodingKeys.tagline)
         overview = try container.decodeIfPresent(String.self, forKey: CodingKeys.overview)

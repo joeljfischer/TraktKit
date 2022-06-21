@@ -14,12 +14,13 @@ public struct Airs: Codable, Hashable {
     public let timezone: String?
 }
 
-public struct TraktShow: Codable, Hashable {
+public struct TraktShow: Codable, Hashable, Identifiable {
+    public var id: Int { providerIds.trakt }
     
     // Extended: Min
     public let title: String
     public let year: Int?
-    public let ids: ID
+    public let providerIds: ProviderIds
     
     // Extended: Full
     public let overview: String?
@@ -43,7 +44,7 @@ public struct TraktShow: Codable, Hashable {
     enum CodingKeys: String, CodingKey {
         case title
         case year
-        case ids
+        case providerIds = "ids"
         
         case overview
         case firstAired = "first_aired"
@@ -64,10 +65,10 @@ public struct TraktShow: Codable, Hashable {
         case airedEpisodes = "aired_episodes"
     }
 
-    public init(title: String, year: Int?, ids: ID, overview: String? = nil, firstAired: Date? = nil, airs: Airs? = nil, runtime: Int? = nil, certification: String? = nil, network: String? = nil, country: String? = nil, trailer: URL? = nil, homepage: URL? = nil, status: String? = nil, rating: Double? = nil, votes: Int? = nil, updatedAt: Date? = nil, language: String? = nil, availableTranslations: [String]? = nil, genres: [String]? = nil, airedEpisodes: Int? = nil) {
+    public init(title: String, year: Int?, ids: ProviderIds, overview: String? = nil, firstAired: Date? = nil, airs: Airs? = nil, runtime: Int? = nil, certification: String? = nil, network: String? = nil, country: String? = nil, trailer: URL? = nil, homepage: URL? = nil, status: String? = nil, rating: Double? = nil, votes: Int? = nil, updatedAt: Date? = nil, language: String? = nil, availableTranslations: [String]? = nil, genres: [String]? = nil, airedEpisodes: Int? = nil) {
         self.title = title
         self.year = year
-        self.ids = ids
+        self.providerIds = ids
         self.overview = overview
         self.firstAired = firstAired
         self.airs = airs
@@ -91,7 +92,7 @@ public struct TraktShow: Codable, Hashable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         title = try container.decode(String.self, forKey: CodingKeys.title)
         year = try container.decodeIfPresent(Int.self, forKey: CodingKeys.year)
-        ids = try container.decode(ID.self, forKey: CodingKeys.ids)
+        providerIds = try container.decode(ProviderIds.self, forKey: CodingKeys.providerIds)
         
         overview = try container.decodeIfPresent(String.self, forKey: CodingKeys.overview)
         firstAired = try container.decodeIfPresent(Date.self, forKey: CodingKeys.firstAired)
