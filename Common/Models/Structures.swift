@@ -28,6 +28,15 @@ public struct ID: Codable, Hashable {
         case tmdb
         case tvRage = "tvrage"
     }
+
+    init(trakt: Int, slug: String, tvdb: Int? = nil, imdb: String? = nil, tmdb: Int? = nil, tvRage: Int? = nil) {
+        self.trakt = trakt
+        self.slug = slug
+        self.tvdb = tvdb
+        self.imdb = imdb
+        self.tmdb = tmdb
+        self.tvRage = tvRage
+    }
 }
 
 public struct SeasonId: Codable, Hashable {
