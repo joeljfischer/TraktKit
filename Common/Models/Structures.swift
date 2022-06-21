@@ -29,7 +29,7 @@ public struct ID: Codable, Hashable {
         case tvRage = "tvrage"
     }
 
-    init(trakt: Int, slug: String, tvdb: Int? = nil, imdb: String? = nil, tmdb: Int? = nil, tvRage: Int? = nil) {
+    public init(trakt: Int, slug: String, tvdb: Int? = nil, imdb: String? = nil, tmdb: Int? = nil, tvRage: Int? = nil) {
         self.trakt = trakt
         self.slug = slug
         self.tvdb = tvdb
