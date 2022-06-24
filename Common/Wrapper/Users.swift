@@ -97,7 +97,7 @@ extension TraktManager {
      ✨ Extended Info
      */
     @discardableResult
-    public func hiddenItems(section: SectionType, type: HiddenItemsType? = nil, extended: [ExtendedType] = [.Min], pagination: Pagination? = nil, completion: @escaping HiddenItemsCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func hiddenItems(section: SectionType, type: HiddenItemsType? = nil, extended: [ExtendedType] = [.min], pagination: Pagination? = nil, completion: @escaping HiddenItemsCompletionHandler) -> URLSessionDataTaskProtocol? {
         var query: [String: String] = ["extended": extended.queryString()]
         if let type = type {
             query["type"] = type.rawValue
@@ -169,7 +169,7 @@ extension TraktManager {
      🔓 OAuth Optional
      */
     @discardableResult
-    public func getUserProfile(username: String = "me", extended: [ExtendedType] = [.Min], completion: @escaping ObjectCompletionHandler<User>) -> URLSessionDataTaskProtocol? {
+    public func getUserProfile(username: String = "me", extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<User>) -> URLSessionDataTaskProtocol? {
         let authorization = username == "me" ? true : false
         guard let request = mutableRequest(forPath: "users/\(username)",
                                          withQuery: ["extended": extended.queryString()],
@@ -378,7 +378,7 @@ extension TraktManager {
     🔓 OAuth Optional
     */
     @discardableResult
-    public func getItemsForCustomList<T: CustomStringConvertible>(username: String = "me", listID: T, type: [ListItemType]? = nil, extended: [ExtendedType] = [.Min], completion: @escaping ListItemCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getItemsForCustomList<T: CustomStringConvertible>(username: String = "me", listID: T, type: [ListItemType]? = nil, extended: [ExtendedType] = [.min], completion: @escaping ListItemCompletionHandler) -> URLSessionDataTaskProtocol? {
         let authorization = username == "me" ? true : false
         var path = "users/\(username)/lists/\(listID)/items"
         
@@ -545,7 +545,7 @@ extension TraktManager {
     ✨ Extended Info
     */
     @discardableResult
-    public func getUserWatchedHistory(username: String = "me", type: WatchedType? = nil, traktId: Int? = nil, startAt: Date? = nil, endAt: Date? = nil, extended: [ExtendedType] = [.Min], pagination: Pagination? = nil, completion: @escaping HistoryCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getUserWatchedHistory(username: String = "me", type: WatchedType? = nil, traktId: Int? = nil, startAt: Date? = nil, endAt: Date? = nil, extended: [ExtendedType] = [.min], pagination: Pagination? = nil, completion: @escaping HistoryCompletionHandler) -> URLSessionDataTaskProtocol? {
         var path = "users/\(username)/history"
         
         if let type = type {
@@ -618,7 +618,7 @@ extension TraktManager {
     🔓 OAuth Optional
     */
     @discardableResult
-    public func getUserWatchlist(username: String = "me", type: WatchedType, extended: [ExtendedType] = [.Min], completion: @escaping ListItemCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getUserWatchlist(username: String = "me", type: WatchedType, extended: [ExtendedType] = [.min], completion: @escaping ListItemCompletionHandler) -> URLSessionDataTaskProtocol? {
         let authorization = username == "me" ? true : false
         guard let request = mutableRequest(forPath: "users/\(username)/watchlist/\(type.rawValue)",
                                          withQuery: ["extended": extended.queryString()],
@@ -654,7 +654,7 @@ extension TraktManager {
     🔓 OAuth Optional
     */
     @discardableResult
-    public func getUserWatched(username: String = "me", type: Type, extended: [ExtendedType] = [.Min], completion: @escaping UserWatchedCompletion) -> URLSessionDataTaskProtocol? {
+    public func getUserWatched(username: String = "me", type: Type, extended: [ExtendedType] = [.min], completion: @escaping UserWatchedCompletion) -> URLSessionDataTaskProtocol? {
         let authorization = username == "me" ? true : false
         guard var request = mutableRequest(forPath: "users/\(username)/watched/\(type.rawValue)",
                                            withQuery: ["extended": extended.queryString()],

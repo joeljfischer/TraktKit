@@ -18,7 +18,7 @@ extension TraktManager {
      **Note**: If the `first_aired` is unknown, it will be set to `null`.
      */
     @discardableResult
-    public func getEpisodeSummary<T: CustomStringConvertible>(showID id: T, seasonNumber season: NSNumber, episodeNumber episode: NSNumber, extended: [ExtendedType] = [.Min], completion: @escaping ObjectCompletionHandler<TraktEpisode>) -> URLSessionDataTaskProtocol? {
+    public func getEpisodeSummary<T: CustomStringConvertible>(showID id: T, seasonNumber season: NSNumber, episodeNumber episode: NSNumber, extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<TraktEpisode>) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "shows/\(id)/seasons/\(season)/episodes/\(episode)",
             withQuery: ["extended": extended.queryString()],
             isAuthorized: false,
@@ -173,7 +173,7 @@ extension TraktManager {
      **Note**: This returns a lot of data, so please only use this extended parameter if you actually need it!
      */
     @discardableResult
-    public func getPeopleInEpisode<T: CustomStringConvertible>(showID id: T, season: NSNumber, episode: NSNumber, extended: [ExtendedType] = [.Min], completion: @escaping ObjectCompletionHandler<CastAndCrew<TVCastMember, TVCrewMember>>) -> URLSessionDataTaskProtocol? {
+    public func getPeopleInEpisode<T: CustomStringConvertible>(showID id: T, season: NSNumber, episode: NSNumber, extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<CastAndCrew<TVCastMember, TVCrewMember>>) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "shows/\(id)/seasons/\(season)/episodes/\(episode)/people",
             withQuery: ["extended": extended.queryString()],
             isAuthorized: false,

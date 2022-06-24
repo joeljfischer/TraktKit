@@ -127,46 +127,46 @@ public enum SearchType: String {
 
 /// Type of ID used for look up
 public enum LookupType {
-    case Trakt(id: NSNumber)
-    case IMDB(id: String)
-    case TMDB(id: NSNumber)
-    case TVDB(id: NSNumber)
-    case TVRage(id: NSNumber)
+    case trakt(id: NSNumber)
+    case imdb(id: String)
+    case tmdb(id: NSNumber)
+    case tvdb(id: NSNumber)
+    case tvRage(id: NSNumber)
 
-    func name() -> String {
+    var name: String {
         switch self {
-        case .Trakt(_):
+        case .trakt(_):
             return "trakt"
-        case .IMDB(_):
+        case .imdb(_):
             return "imdb"
-        case .TMDB(_):
+        case .tmdb(_):
             return "tmdb"
-        case .TVDB(_):
+        case .tvdb(_):
             return "tvdb"
-        case .TVRage(_):
+        case .tvRage(_):
             return "tvrage"
         }
     }
 
-    func id() -> String {
+    var id: String {
         switch self {
-        case .Trakt(let id):
+        case .trakt(let id):
             return "\(id)"
-        case .IMDB(let id):
+        case .imdb(let id):
             return id
-        case .TMDB(let id):
+        case .tmdb(let id):
             return "\(id)"
-        case .TVDB(let id):
+        case .tvdb(let id):
             return "\(id)"
-        case .TVRage(let id):
+        case .tvRage(let id):
             return "\(id)"
         }
     }
 }
 
 public enum Type: String, CustomStringConvertible {
-    case Movies = "movies"
-    case Shows = "shows"
+    case movies
+    case shows
 
     public var description: String {
         return self.rawValue
@@ -174,10 +174,10 @@ public enum Type: String, CustomStringConvertible {
 }
 
 public enum WatchedType: String, CustomStringConvertible {
-    case Movies = "movies"
-    case Shows = "shows"
-    case Seasons = "seasons"
-    case Episodes = "episodes"
+    case movies
+    case shows
+    case seasons
+    case episodes
 
     public var description: String {
         return self.rawValue
@@ -185,12 +185,12 @@ public enum WatchedType: String, CustomStringConvertible {
 }
 
 public enum Type2: String, CustomStringConvertible {
-    case All = "all"
-    case Movies = "movies"
-    case Shows = "shows"
-    case Seasons = "seasons"
-    case Episodes = "episodes"
-    case Lists = "lists"
+    case all
+    case movies
+    case shows
+    case seasons
+    case episodes
+    case lists
 
     public var description: String {
         return self.rawValue
@@ -231,13 +231,13 @@ public enum CommentType: String {
 /// Extended information
 public enum ExtendedType: String, CustomStringConvertible {
     /// Least amount of info
-    case Min = "min"
+    case min
     /// All information, excluding images
-    case Full = "full"
+    case full
     /// Collection only. Additional video and audio info.
-    case Metadata = "metadata"
+    case metadata
     /// Get all seasons and episodes
-    case Episodes = "episodes"
+    case episodes
     /// Get watched shows without seasons. https://trakt.docs.apiary.io/#reference/users/watched/get-watched
     case noSeasons = "noseasons"
     /// For the show and season `/people` methods.
@@ -271,22 +271,22 @@ public enum Period: String {
 
 public enum SectionType: String {
     /// Can hide movie, show objects
-    case Calendar = "calendar"
+    case calendar
     /// Can hide show, season objects
-    case ProgressWatched = "progress_watched"
+    case progressWatched = "progress_watched"
     /// Can hide show, season objects
-    case ProgressCollected = "progress_collected"
+    case progressCollected = "progress_collected"
     /// Can hide movie, show objects
-    case Recommendations = "recommendations"
+    case recommendations
 }
 
 public enum HiddenItemsType: String {
-    case Movie = "movie"
-    case Show = "show"
-    case Season = "Season"
+    case movie
+    case show
+    case season = "Season"
 }
 
 public enum LikeType: String {
-    case Comments = "comments"
-    case Lists = "lists"
+    case comments
+    case lists
 }

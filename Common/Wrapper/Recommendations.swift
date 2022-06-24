@@ -20,7 +20,7 @@ extension TraktManager {
      */
     @discardableResult
     public func getRecommendedMovies(completion: @escaping ObjectsCompletionHandler<TraktMovie>) -> URLSessionDataTaskProtocol? {
-        return getRecommendations(.Movies, completion: completion)
+        return getRecommendations(.movies, completion: completion)
     }
     
     /**
@@ -30,7 +30,7 @@ extension TraktManager {
      */
     @discardableResult
     public func hideRecommendedMovie<T: CustomStringConvertible>(movieID id: T, completion: @escaping SuccessCompletionHandler) -> URLSessionDataTaskProtocol? {
-        return hideRecommendation(type: .Movies, id: id, completion: completion)
+        return hideRecommendation(type: .movies, id: id, completion: completion)
     }
     
     /**
@@ -40,7 +40,7 @@ extension TraktManager {
      */
     @discardableResult
     public func getRecommendedShows(completion: @escaping ObjectsCompletionHandler<TraktShow>) -> URLSessionDataTaskProtocol? {
-        return getRecommendations(.Shows, completion: completion)
+        return getRecommendations(.shows, completion: completion)
     }
     
     /**
@@ -50,7 +50,7 @@ extension TraktManager {
      */
     @discardableResult
     public func hideRecommendedShow<T: CustomStringConvertible>(showID id: T, completion: @escaping SuccessCompletionHandler) -> URLSessionDataTaskProtocol? {
-        return hideRecommendation(type: .Shows, id: id, completion: completion)
+        return hideRecommendation(type: .shows, id: id, completion: completion)
     }
     
     // MARK: - Private

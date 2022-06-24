@@ -154,7 +154,7 @@ extension TraktManager {
      - parameter days: Number of days to display. Example: `7`.
      */
     @discardableResult
-    public func allMovies(startDateString dateString: String, days: Int, extended: [ExtendedType] = [.Min], filters: [Filter]? = nil, completion: @escaping ObjectsCompletionHandler<CalendarMovie>) -> URLSessionDataTaskProtocol? {
+    public func allMovies(startDateString dateString: String, days: Int, extended: [ExtendedType] = [.min], filters: [Filter]? = nil, completion: @escaping ObjectsCompletionHandler<CalendarMovie>) -> URLSessionDataTaskProtocol? {
 
         var query: [String: String] = ["extended": extended.queryString()]
 

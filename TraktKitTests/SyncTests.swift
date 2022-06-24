@@ -50,7 +50,7 @@ class SyncTests: XCTestCase {
         session.nextData = jsonData(named: "test_get_playback_progress")
 
         let expectation = XCTestExpectation(description: "Get Playback progress")
-        traktManager.getPlaybackProgress(type: .Movies) { result in
+        traktManager.getPlaybackProgress(type: .movies) { result in
             if case .success(let progress) = result {
                 XCTAssertEqual(progress.count, 2)
                 let first = progress.first
@@ -99,7 +99,7 @@ class SyncTests: XCTestCase {
         session.nextData = jsonData(named: "test_get_collection")
 
         let expectation = XCTestExpectation(description: "Get collection")
-        traktManager.getCollection(type: .Movies) { result in
+        traktManager.getCollection(type: .movies) { result in
             if case .success(let collection) = result {
                 XCTAssertEqual(collection.count, 2)
                 expectation.fulfill()
@@ -120,7 +120,7 @@ class SyncTests: XCTestCase {
         session.nextData = jsonData(named: "test_get_collection_shows")
         
         let expectation = XCTestExpectation(description: "Get shows collection")
-        traktManager.getCollection(type: .Shows) { result in
+        traktManager.getCollection(type: .shows) { result in
             if case .success(let collection) = result {
                 XCTAssertEqual(collection.count, 2)
                 collection.forEach {
@@ -271,7 +271,7 @@ class SyncTests: XCTestCase {
         session.nextData = jsonData(named: "test_get_watched_history")
 
         let expectation = XCTestExpectation(description: "Get Watched history")
-        traktManager.getHistory(type: .Movies) { result in
+        traktManager.getHistory(type: .movies) { result in
             if case .success(let history, _, _) = result {
                 XCTAssertEqual(history.count, 3)
                 expectation.fulfill()
@@ -349,7 +349,7 @@ class SyncTests: XCTestCase {
         session.nextData = jsonData(named: "test_get_ratings")
 
         let expectation = XCTestExpectation(description: "Get ratings")
-        traktManager.getRatings(type: .Movies, rating: 9) { result in
+        traktManager.getRatings(type: .movies, rating: 9) { result in
             if case .success(let ratings) = result {
                 XCTAssertEqual(ratings.count, 2)
                 expectation.fulfill()
@@ -426,7 +426,7 @@ class SyncTests: XCTestCase {
         session.nextData = jsonData(named: "test_get_watchlist")
 
         let expectation = XCTestExpectation(description: "Get watchlist")
-        traktManager.getWatchlist(watchType: .Movies) { result in
+        traktManager.getWatchlist(watchType: .movies) { result in
             if case .success(let watchlist, _, _) = result {
                 XCTAssertEqual(watchlist.count, 2)
                 expectation.fulfill()

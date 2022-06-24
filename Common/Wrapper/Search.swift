@@ -21,7 +21,7 @@ extension TraktManager {
     @discardableResult
     public func search(query: String,
                        types: [SearchType],
-                       extended: [ExtendedType] = [.Min],
+                       extended: [ExtendedType] = [.min],
                        pagination: Pagination? = nil,
                        filters: [Filter]? = nil,
                        fields: [SearchType.Field]? = nil,
@@ -69,7 +69,7 @@ extension TraktManager {
      */
     @discardableResult
     public func lookup(id: LookupType,
-                       extended: [ExtendedType] = [.Min],
+                       extended: [ExtendedType] = [.min],
                        type: SearchType,
                        pagination: Pagination? = nil,
                        completion: @escaping SearchCompletionHandler) -> URLSessionDataTaskProtocol? {
@@ -84,7 +84,7 @@ extension TraktManager {
             }
         }
         
-        guard let request = mutableRequest(forPath: "search/\(id.name())/\(id.id())",
+        guard let request = mutableRequest(forPath: "search/\(id.name)/\(id.id)",
             withQuery: query,
             isAuthorized: false,
             withHTTPMethod: .GET) else { return nil }

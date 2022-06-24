@@ -12,7 +12,7 @@ internal extension TraktManager {
     
     // MARK: - Trending
     
-    func getTrending<T>(_ type: WatchedType, pagination: Pagination?, extended: [ExtendedType] = [.Min], filters: [Filter]? = nil, completion: @escaping ((_ result: ObjectsResultTypePagination<T>) -> Void)) -> URLSessionDataTaskProtocol? {
+    func getTrending<T>(_ type: WatchedType, pagination: Pagination?, extended: [ExtendedType] = [.min], filters: [Filter]? = nil, completion: @escaping ((_ result: ObjectsResultTypePagination<T>) -> Void)) -> URLSessionDataTaskProtocol? {
 
         var query: [String: String] = ["extended": extended.queryString()]
 
@@ -41,7 +41,7 @@ internal extension TraktManager {
     
     // MARK: - Popular
     
-    func getPopular<T>(_ type: WatchedType, pagination: Pagination?, extended: [ExtendedType] = [.Min], filters: [Filter]? = nil, completion: @escaping ((_ result: ObjectsResultTypePagination<T>) -> Void)) -> URLSessionDataTaskProtocol? {
+    func getPopular<T>(_ type: WatchedType, pagination: Pagination?, extended: [ExtendedType] = [.min], filters: [Filter]? = nil, completion: @escaping ((_ result: ObjectsResultTypePagination<T>) -> Void)) -> URLSessionDataTaskProtocol? {
 
         var query: [String: String] = ["extended": extended.queryString()]
 
@@ -70,7 +70,7 @@ internal extension TraktManager {
     
     // MARK: - Played
     
-    func getPlayed<T>(_ type: WatchedType, period: Period = .Weekly, pagination: Pagination?, extended: [ExtendedType] = [.Min], completion: @escaping ((_ result: ObjectsResultTypePagination<T>) -> Void)) -> URLSessionDataTaskProtocol? {
+    func getPlayed<T>(_ type: WatchedType, period: Period = .Weekly, pagination: Pagination?, extended: [ExtendedType] = [.min], completion: @escaping ((_ result: ObjectsResultTypePagination<T>) -> Void)) -> URLSessionDataTaskProtocol? {
 
         var query: [String: String] = ["extended": extended.queryString()]
 
@@ -93,7 +93,7 @@ internal extension TraktManager {
     
     // MARK: - Watched
     
-    func getWatched<T>(_ type: WatchedType, period: Period = .Weekly, pagination: Pagination?, extended: [ExtendedType] = [.Min], completion: @escaping paginatedCompletionHandler<T>) -> URLSessionDataTaskProtocol? {
+    func getWatched<T>(_ type: WatchedType, period: Period = .Weekly, pagination: Pagination?, extended: [ExtendedType] = [.min], completion: @escaping paginatedCompletionHandler<T>) -> URLSessionDataTaskProtocol? {
 
         var query: [String: String] = ["extended": extended.queryString()]
 
@@ -116,7 +116,7 @@ internal extension TraktManager {
     
     // MARK: - Collected
     
-    func getCollected<T>(_ type: WatchedType, period: Period = .Weekly, pagination: Pagination?, extended: [ExtendedType] = [.Min], completion: @escaping paginatedCompletionHandler<T>) -> URLSessionDataTaskProtocol? {
+    func getCollected<T>(_ type: WatchedType, period: Period = .Weekly, pagination: Pagination?, extended: [ExtendedType] = [.min], completion: @escaping paginatedCompletionHandler<T>) -> URLSessionDataTaskProtocol? {
 
         var query: [String: String] = ["extended": extended.queryString()]
 
@@ -139,7 +139,7 @@ internal extension TraktManager {
     
     // MARK: - Anticipated
     
-    func getAnticipated<T>(_ type: WatchedType, pagination: Pagination?, extended: [ExtendedType] = [.Min], completion: @escaping paginatedCompletionHandler<T>) -> URLSessionDataTaskProtocol? {
+    func getAnticipated<T>(_ type: WatchedType, pagination: Pagination?, extended: [ExtendedType] = [.min], completion: @escaping paginatedCompletionHandler<T>) -> URLSessionDataTaskProtocol? {
 
         var query: [String: String] = ["extended": extended.queryString()]
 
@@ -189,7 +189,7 @@ internal extension TraktManager {
     
     // MARK: - Summary
     
-    func getSummary<T: CustomStringConvertible, U: Decodable>(_ type: WatchedType, id: T, extended: [ExtendedType] = [.Min], completion: @escaping ObjectCompletionHandler<U>) -> URLSessionDataTaskProtocol? {
+    func getSummary<T: CustomStringConvertible, U: Decodable>(_ type: WatchedType, id: T, extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<U>) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "\(type)/\(id)",
                                            withQuery: ["extended": extended.queryString()],
                                            isAuthorized: false,
@@ -247,7 +247,7 @@ internal extension TraktManager {
     
     // MARK: - People
     
-    func getPeople<T: CustomStringConvertible, Cast: Codable & Hashable, Crew: Codable & Hashable>(_ type: WatchedType, id: T, extended: [ExtendedType] = [.Min], completion: @escaping ObjectCompletionHandler<CastAndCrew<Cast, Crew>>) -> URLSessionDataTaskProtocol? {
+    func getPeople<T: CustomStringConvertible, Cast: Codable & Hashable, Crew: Codable & Hashable>(_ type: WatchedType, id: T, extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<CastAndCrew<Cast, Crew>>) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "\(type)/\(id)/people",
                                            withQuery: ["extended": extended.queryString()],
                                            isAuthorized: false,
@@ -269,7 +269,7 @@ internal extension TraktManager {
     
     // MARK: - Related
     
-    func getRelated<T: CustomStringConvertible, U>(_ type: WatchedType, id: T, extended: [ExtendedType] = [.Min], completion: @escaping ((_ result: ObjectsResultType<U>) -> Void)) -> URLSessionDataTaskProtocol? {
+    func getRelated<T: CustomStringConvertible, U>(_ type: WatchedType, id: T, extended: [ExtendedType] = [.min], completion: @escaping ((_ result: ObjectsResultType<U>) -> Void)) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "\(type)/\(id)/related",
                                            withQuery: ["extended": extended.queryString()],
                                            isAuthorized: false,

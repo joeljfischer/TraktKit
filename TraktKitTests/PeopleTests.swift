@@ -27,7 +27,7 @@ class PeopleTests: XCTestCase {
         session.nextData = jsonData(named: "Person_Min")
 
         let expectation = XCTestExpectation(description: "Get minimal details on a person")
-        traktManager.getPersonDetails(personID: "bryan-cranston", extended: [.Min]) { result in
+        traktManager.getPersonDetails(personID: "bryan-cranston", extended: [.min]) { result in
             if case .success(let person) = result {
                 XCTAssertEqual(person.name, "Bryan Cranston")
                 expectation.fulfill()
@@ -72,7 +72,7 @@ class PeopleTests: XCTestCase {
         session.nextData = jsonData(named: "test_get_movie_credits")
 
         let expectation = XCTestExpectation(description: "Get movie credits for person")
-        traktManager.getMovieCredits(personID: "bryan-cranston", extended: [.Min]) { result in
+        traktManager.getMovieCredits(personID: "bryan-cranston", extended: [.min]) { result in
             if case .success(let movieCredits) = result {
                 XCTAssertEqual(movieCredits.writers?.count, 2)
                 XCTAssertEqual(movieCredits.directors?.count, 1)
@@ -97,7 +97,7 @@ class PeopleTests: XCTestCase {
         session.nextData = jsonData(named: "test_get_show_credits")
 
         let expectation = XCTestExpectation(description: "Get show credits for person")
-        traktManager.getShowCredits(personID: "bryan-cranston", extended: [.Min]) { result in
+        traktManager.getShowCredits(personID: "bryan-cranston", extended: [.min]) { result in
             if case .success(let showCredits) = result {
                 XCTAssertEqual(showCredits.producers?.count, 4)
                 XCTAssertEqual(showCredits.cast?.count, 54)

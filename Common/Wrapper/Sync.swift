@@ -43,7 +43,7 @@ extension TraktManager {
      
      🔒 OAuth: Required
      
-     - parameter type: Possible Values: .Movies, .Episodes
+     - parameter type: Possible Values: .movies, .Episodes
      */
     @discardableResult
     public func getPlaybackProgress(type: WatchedType, completion: @escaping ObjectsCompletionHandler<PlaybackProgress>) -> URLSessionDataTaskProtocol? {
@@ -87,7 +87,7 @@ extension TraktManager {
      ✨ Extended Info
      */
     @discardableResult
-    public func getCollection(type: WatchedType, extended: [ExtendedType] = [.Min], completion: @escaping CollectionCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getCollection(type: WatchedType, extended: [ExtendedType] = [.min], completion: @escaping CollectionCompletionHandler) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "sync/collection/\(type)",
                                          withQuery: ["extended": extended.queryString()],
                                          isAuthorized: true,
@@ -155,7 +155,7 @@ extension TraktManager {
      - parameter completion: completion handler
      */
     @discardableResult
-    public func getWatchedShows(extended: [ExtendedType] = [.Min], completion: @escaping WatchedShowsCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getWatchedShows(extended: [ExtendedType] = [.min], completion: @escaping WatchedShowsCompletionHandler) -> URLSessionDataTaskProtocol? {
         
         guard
             let request = mutableRequest(forPath: "sync/watched/shows",
@@ -181,7 +181,7 @@ extension TraktManager {
      - parameter completion: completion handler
      */
     @discardableResult
-    public func getWatchedMovies(extended: [ExtendedType] = [.Min], completion: @escaping WatchedMoviesCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getWatchedMovies(extended: [ExtendedType] = [.min], completion: @escaping WatchedMoviesCompletionHandler) -> URLSessionDataTaskProtocol? {
         guard
             let request = mutableRequest(forPath: "sync/watched/movies",
                                          withQuery: ["extended": extended.queryString()],
@@ -202,7 +202,7 @@ extension TraktManager {
      ✨ Extended Info
      */
     @discardableResult
-    public func getHistory(type: WatchedType? = nil, traktID: Int? = nil, startAt: Date? = nil, endAt: Date? = nil, extended: [ExtendedType] = [.Min], pagination: Pagination? = nil, completion: @escaping HistoryCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getHistory(type: WatchedType? = nil, traktID: Int? = nil, startAt: Date? = nil, endAt: Date? = nil, extended: [ExtendedType] = [.min], pagination: Pagination? = nil, completion: @escaping HistoryCompletionHandler) -> URLSessionDataTaskProtocol? {
         
         var query: [String: String] = ["extended": extended.queryString()]
         
@@ -358,7 +358,7 @@ extension TraktManager {
      ✨ Extended Info
      */
     @discardableResult
-    public func getWatchlist(watchType: WatchedType, pagination: Pagination? = nil, extended: [ExtendedType] = [.Min], completion: @escaping WatchlistCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getWatchlist(watchType: WatchedType, pagination: Pagination? = nil, extended: [ExtendedType] = [.min], completion: @escaping WatchlistCompletionHandler) -> URLSessionDataTaskProtocol? {
 
         var query: [String: String] = ["extended": extended.queryString()]
 

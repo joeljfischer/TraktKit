@@ -26,7 +26,7 @@ class GenreTests: XCTestCase {
         session.nextData = jsonData(named: "test_get_genres")
 
         let expectation = XCTestExpectation(description: "Get movie genres")
-        traktManager.listGenres(type: .Movies) { result in
+        traktManager.listGenres(type: .movies) { result in
             if case .success(let genres) = result {
                 XCTAssertEqual(genres.count, 33)
                 expectation.fulfill()

@@ -21,7 +21,7 @@ extension TraktManager {
      
      */
     @discardableResult
-    public func getSeasons<T: CustomStringConvertible>(showID id: T, extended: [ExtendedType] = [.Min], completion: @escaping SeasonsCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getSeasons<T: CustomStringConvertible>(showID id: T, extended: [ExtendedType] = [.min], completion: @escaping SeasonsCompletionHandler) -> URLSessionDataTaskProtocol? {
         guard var request = mutableRequest(forPath: "shows/\(id)/seasons",
                                            withQuery: ["extended": extended.queryString()],
                                            isAuthorized: false,
@@ -41,7 +41,7 @@ extension TraktManager {
      ✨ Extended
      */
     @discardableResult
-    public func getEpisodesForSeason<T: CustomStringConvertible>(showID id: T, season: NSNumber, translatedInto language: String? = nil, extended: [ExtendedType] = [.Min], completion: @escaping EpisodesCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getEpisodesForSeason<T: CustomStringConvertible>(showID id: T, season: NSNumber, translatedInto language: String? = nil, extended: [ExtendedType] = [.min], completion: @escaping EpisodesCompletionHandler) -> URLSessionDataTaskProtocol? {
 
         var query = ["extended": extended.queryString()]
         query["translations"] = language
@@ -182,7 +182,7 @@ extension TraktManager {
      **Note**: This returns a lot of data, so please only use this extended parameter if you actually need it!
      */
     @discardableResult
-    public func getPeopleInSeason<T: CustomStringConvertible>(showID id: T, season: NSNumber, extended: [ExtendedType] = [.Min], completion: @escaping ObjectCompletionHandler<CastAndCrew<TVCastMember, TVCrewMember>>) -> URLSessionDataTaskProtocol? {
+    public func getPeopleInSeason<T: CustomStringConvertible>(showID id: T, season: NSNumber, extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<CastAndCrew<TVCastMember, TVCrewMember>>) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "shows/\(id)/seasons/\(season)/people",
             withQuery: ["extended": extended.queryString()],
             isAuthorized: false,

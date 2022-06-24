@@ -18,7 +18,7 @@ extension TraktManager {
      ✨ Extended Info
      */
     @discardableResult
-    public func getPersonDetails<T: CustomStringConvertible>(personID id: T, extended: [ExtendedType] = [.Min], completion: @escaping ObjectCompletionHandler<Person>) -> URLSessionDataTaskProtocol? {
+    public func getPersonDetails<T: CustomStringConvertible>(personID id: T, extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<Person>) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "people/\(id)",
             withQuery: ["extended": extended.queryString()],
             isAuthorized: false,
@@ -40,8 +40,8 @@ extension TraktManager {
      ✨ Extended Info
      */
     @discardableResult
-    public func getMovieCredits<T: CustomStringConvertible>(personID id: T, extended: [ExtendedType] = [.Min], completion: @escaping ObjectCompletionHandler<CastAndCrew<PeopleMovieCastMember, PeopleMovieCrewMember>>) -> URLSessionDataTaskProtocol? {
-        return getCredits(type: WatchedType.Movies, id: id, extended: extended, completion: completion)
+    public func getMovieCredits<T: CustomStringConvertible>(personID id: T, extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<CastAndCrew<PeopleMovieCastMember, PeopleMovieCrewMember>>) -> URLSessionDataTaskProtocol? {
+        return getCredits(type: WatchedType.movies, id: id, extended: extended, completion: completion)
     }
 
     // MARK: - Shows
@@ -54,8 +54,8 @@ extension TraktManager {
      ✨ Extended Info
      */
     @discardableResult
-    public func getShowCredits<T: CustomStringConvertible>(personID id: T, extended: [ExtendedType] = [.Min], completion: @escaping ObjectCompletionHandler<CastAndCrew<PeopleTVCastMember, PeopleTVCrewMember>>) -> URLSessionDataTaskProtocol? {
-        return getCredits(type: WatchedType.Shows, id: id, extended: extended, completion: completion)
+    public func getShowCredits<T: CustomStringConvertible>(personID id: T, extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<CastAndCrew<PeopleTVCastMember, PeopleTVCrewMember>>) -> URLSessionDataTaskProtocol? {
+        return getCredits(type: WatchedType.shows, id: id, extended: extended, completion: completion)
     }
 
     // MARK: - Lists
@@ -87,7 +87,7 @@ extension TraktManager {
     // MARK: - Private
     
     @discardableResult
-    private func getCredits<T: CustomStringConvertible, Cast: Codable & Hashable, Crew: Codable & Hashable>(type: WatchedType, id: T, extended: [ExtendedType] = [.Min], completion: @escaping ObjectCompletionHandler<CastAndCrew<Cast, Crew>>) -> URLSessionDataTaskProtocol? {
+    private func getCredits<T: CustomStringConvertible, Cast: Codable & Hashable, Crew: Codable & Hashable>(type: WatchedType, id: T, extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<CastAndCrew<Cast, Crew>>) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "people/\(id)/\(type)",
             withQuery: ["extended": extended.queryString()],
             isAuthorized: false,
