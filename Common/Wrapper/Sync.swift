@@ -112,7 +112,7 @@ extension TraktManager {
      - parameter episodes: Array of episode Trakt ids
      */
     @discardableResult
-    public func addToCollection(movies: [CollectionId]? = nil, shows: [CollectionId]? = nil, seasons: [CollectionId]? = nil, episodes: [CollectionId]? = nil, completion: @escaping ObjectCompletionHandler<AddToCollectionResult>) throws -> URLSessionDataTaskProtocol? {
+    public func addToCollection(movies: [CollectionId]? = nil, shows: [CollectionId]? = nil, seasons: [CollectionId]? = nil, episodes: [CollectionId]? = nil, completion: @escaping ObjectCompletionHandler<AddToCollectionResult>) -> URLSessionDataTaskProtocol? {
         let body = TraktMediaBody(movies: movies, shows: shows, seasons: seasons, episodes: episodes)
         guard let request = post("sync/collection", body: body) else { return nil }
         return performRequest(request: request, completion: completion)
@@ -131,7 +131,7 @@ extension TraktManager {
      - parameter episodes: Array of episode Trakt ids
      */
     @discardableResult
-    public func removeFromCollection(movies: [SyncId]? = nil, shows: [SyncId]? = nil, seasons: [SyncId]? = nil, episodes: [SyncId]? = nil, completion: @escaping ObjectCompletionHandler<RemoveFromCollectionResult>) throws -> URLSessionDataTaskProtocol? {
+    public func removeFromCollection(movies: [SyncId]? = nil, shows: [SyncId]? = nil, seasons: [SyncId]? = nil, episodes: [SyncId]? = nil, completion: @escaping ObjectCompletionHandler<RemoveFromCollectionResult>) -> URLSessionDataTaskProtocol? {
         let body = TraktMediaBody(movies: movies, shows: shows, seasons: seasons, episodes: episodes)
         guard let request = post("sync/collection/remove", body: body) else { return nil }
         return performRequest(request: request, completion: completion)
