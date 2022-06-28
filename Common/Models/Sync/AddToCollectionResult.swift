@@ -16,6 +16,8 @@ public struct AddToCollectionResult: Codable, Hashable {
 
     public struct Added: Codable, Hashable {
         public let movies: Int
+        public let shows: Int
+        public let seasons: Int
         public let episodes: Int
     }
     
