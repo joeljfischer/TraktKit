@@ -8,12 +8,6 @@
 
 import Foundation
 
-public struct Airs: Codable, Hashable {
-    public let day: String?
-    public let time: String?
-    public let timezone: String?
-}
-
 public struct TraktShow: Codable, Hashable, Identifiable {
     public var id: Int { providerIds.trakt }
     
@@ -111,5 +105,17 @@ public struct TraktShow: Codable, Hashable, Identifiable {
         availableTranslations = try container.decodeIfPresent([String].self, forKey: .availableTranslations)
         genres = try container.decodeIfPresent([String].self, forKey: .genres)
         airedEpisodes = try container.decodeIfPresent(Int.self, forKey: .airedEpisodes)
+    }
+
+    public struct Airs: Codable, Hashable {
+        public let day: String?
+        public let time: String?
+        public let timezone: String?
+
+        public init(day: String? = nil, time: String? = nil, timezone: String? = nil) {
+            self.day = day
+            self.time = time
+            self.timezone = timezone
+        }
     }
 }
