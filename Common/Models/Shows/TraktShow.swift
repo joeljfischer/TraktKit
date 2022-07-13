@@ -26,7 +26,7 @@ public struct TraktShow: Codable, Hashable, Identifiable {
     public let country: String?
     public let trailer: URL?
     public let homepage: URL?
-    public let status: String?
+    public let status: ShowStatus?
     public let rating: Double?
     public let votes: Int?
     public let updatedAt: Date?
@@ -59,7 +59,7 @@ public struct TraktShow: Codable, Hashable, Identifiable {
         case airedEpisodes = "aired_episodes"
     }
 
-    public init(title: String, year: Int?, ids: ProviderIds, overview: String? = nil, firstAired: Date? = nil, airs: Airs? = nil, runtime: Int? = nil, certification: String? = nil, network: String? = nil, country: String? = nil, trailer: URL? = nil, homepage: URL? = nil, status: String? = nil, rating: Double? = nil, votes: Int? = nil, updatedAt: Date? = nil, language: String? = nil, availableTranslations: [String]? = nil, genres: [String]? = nil, airedEpisodes: Int? = nil) {
+    public init(title: String, year: Int?, ids: ProviderIds, overview: String? = nil, firstAired: Date? = nil, airs: Airs? = nil, runtime: Int? = nil, certification: String? = nil, network: String? = nil, country: String? = nil, trailer: URL? = nil, homepage: URL? = nil, status: ShowStatus? = nil, rating: Double? = nil, votes: Int? = nil, updatedAt: Date? = nil, language: String? = nil, availableTranslations: [String]? = nil, genres: [String]? = nil, airedEpisodes: Int? = nil) {
         self.title = title
         self.year = year
         self.providerIds = ids
@@ -97,7 +97,7 @@ public struct TraktShow: Codable, Hashable, Identifiable {
         country = try container.decodeIfPresent(String.self, forKey: .country)
         trailer = try? container.decode(URL.self, forKey: .trailer)
         homepage = try? container.decode(URL.self, forKey: .homepage)
-        status = try container.decodeIfPresent(String.self, forKey: .status)
+        status = try container.decodeIfPresent(ShowStatus.self, forKey: .status)
         rating = try container.decodeIfPresent(Double.self, forKey: .rating)
         votes = try container.decodeIfPresent(Int.self, forKey: .votes)
         updatedAt = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
