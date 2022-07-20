@@ -9,6 +9,7 @@
 import Foundation
 
 /// Watched progress. Shows/Progress/Watched
+/// https://trakt.docs.apiary.io/reference/shows/watched-progress/get-show-watched-progress
 public struct TraktShowWatchedProgress: Codable, Hashable {
     
     // Extended: Min
@@ -18,18 +19,23 @@ public struct TraktShowWatchedProgress: Codable, Hashable {
     public let completed: Int
     /// When the last episode was watched
     public let lastWatchedAt: Date?
+    /// When the last reset of progress was
+    public let resetAt: Date?
     public let seasons: [TraktSeasonWatchedProgress]
     public let nextEpisode: TraktEpisode?
     
     enum CodingKeys: String, CodingKey {
         case aired
         case completed
+        case resetAt = "reset_at"
         case lastWatchedAt = "last_watched_at"
         case seasons
         case nextEpisode = "next_episode"
     }
 }
 
+/// Watched progress of a season. From `TraktShowWatchedProgress`.
+/// https://trakt.docs.apiary.io/reference/shows/watched-progress/get-show-watched-progress
 public struct TraktSeasonWatchedProgress: Codable, Hashable {
     
     // Extended: Min
@@ -39,9 +45,12 @@ public struct TraktSeasonWatchedProgress: Codable, Hashable {
     public let aired: Int
     /// Number of episodes that have been watched
     public let completed: Int
+    public let title: String?
     public let episodes: [TraktEpisodeWatchedProgress]
 }
 
+/// Watched progress of a season. From `TraktSeasonWatchedProgress`.
+/// https://trakt.docs.apiary.io/reference/shows/watched-progress/get-show-watched-progress
 public struct TraktEpisodeWatchedProgress: Codable, Hashable {
     
     // Extended: Min

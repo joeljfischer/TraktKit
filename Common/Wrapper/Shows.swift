@@ -227,7 +227,13 @@ extension TraktManager {
     // MARK: - Watched Progress
     
     /**
-     Returns watched progress for show including details on all seasons and episodes. The `next_episode` will be the next episode the user should watch, if there are no upcoming episodes it will be set to `null`. By default, any hidden seasons will be removed from the response and stats. To include these and adjust the completion stats, set the `hidden` flag to `true`.
+     Returns watched progress for a show including details on all aired seasons and episodes. The `next_episode` will be the next episode the user should watch, if there are no upcoming episodes it will be set to `null`. If not `null`, the `reset_at` date is when the user started re-watching the show. Your app can adjust the progress by ignoring episodes with a `last_watched_at` prior to the `reset_at`.
+
+     By default, any hidden seasons will be removed from the response and stats. To include these and adjust the completion stats, set the hidden flag to true.By default, specials will be excluded from the response. Set the specials flag to true to include season 0 and adjust the stats accordingly. If you'd like to include specials, but not adjust the stats, set `count_specials` to `false`.
+
+     By default, the `last_episode` and `next_episode` are calculated using the last aired episode the user has watched, even if they've watched older episodes more recently. To use their last watched episode for these calculations, set the `last_activity` flag to watched.
+
+     Note: Only aired episodes are used to calculate progress. Episodes in the future or without an air date are ignored.
      
      🔒 OAuth: Required
      */
