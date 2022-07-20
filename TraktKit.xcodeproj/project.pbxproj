@@ -185,9 +185,7 @@
 		70B844281EF0DC4D001BA900 /* TraktSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98731CBF48D900744566 /* TraktSeason.swift */; };
 		70B844291EF0DC4D001BA900 /* TraktEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98751CBF48E200744566 /* TraktEpisode.swift */; };
 		70B8442A1EF0DC4D001BA900 /* TraktShowTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98771CBF490200744566 /* TraktShowTranslation.swift */; };
-		70B8442B1EF0DC4D001BA900 /* TraktWatchedShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98791CBF495300744566 /* TraktWatchedShow.swift */; };
-		70B8442C1EF0DC4D001BA900 /* TraktWatchedSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF987B1CBF495D00744566 /* TraktWatchedSeason.swift */; };
-		70B8442D1EF0DC4D001BA900 /* TraktWatchedEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF987D1CBF49C600744566 /* TraktWatchedEpisodes.swift */; };
+		70B8442B1EF0DC4D001BA900 /* TraktWatched.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98791CBF495300744566 /* TraktWatched.swift */; };
 		70B8442E1EF0DC4D001BA900 /* TraktWatchedProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E56161D4E7663009CACC7 /* TraktWatchedProgress.swift */; };
 		70B8442F1EF0DC7C001BA900 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7033F2F1C3AE3C4000E40F7 /* Structures.swift */; };
 		70B844301EF0DD74001BA900 /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FF28DC1C568FF600CA5B53 /* DateParser.swift */; };
@@ -388,9 +386,7 @@
 		A70807381D8E1F5A00176B0A /* TraktSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98731CBF48D900744566 /* TraktSeason.swift */; };
 		A70807391D8E1F5A00176B0A /* TraktEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98751CBF48E200744566 /* TraktEpisode.swift */; };
 		A708073A1D8E1F5A00176B0A /* TraktShowTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98771CBF490200744566 /* TraktShowTranslation.swift */; };
-		A708073B1D8E1F5A00176B0A /* TraktWatchedShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98791CBF495300744566 /* TraktWatchedShow.swift */; };
-		A708073C1D8E1F5A00176B0A /* TraktWatchedSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF987B1CBF495D00744566 /* TraktWatchedSeason.swift */; };
-		A708073D1D8E1F5A00176B0A /* TraktWatchedEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF987D1CBF49C600744566 /* TraktWatchedEpisodes.swift */; };
+		A708073B1D8E1F5A00176B0A /* TraktWatched.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98791CBF495300744566 /* TraktWatched.swift */; };
 		A708073E1D8E1F5A00176B0A /* TraktWatchedProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E56161D4E7663009CACC7 /* TraktWatchedProgress.swift */; };
 		A708073F1D8E1F5A00176B0A /* TraktTrendingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF987F1CBF49E700744566 /* TraktTrendingMovie.swift */; };
 		A70807401D8E1F5A00176B0A /* TraktMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98811CBF49FF00744566 /* TraktMovie.swift */; };
@@ -447,9 +443,7 @@
 		A7582BF21CCA6FE900B3CF63 /* TraktSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98731CBF48D900744566 /* TraktSeason.swift */; };
 		A7582BF31CCA6FE900B3CF63 /* TraktEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98751CBF48E200744566 /* TraktEpisode.swift */; };
 		A7582BF41CCA6FE900B3CF63 /* TraktShowTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98771CBF490200744566 /* TraktShowTranslation.swift */; };
-		A7582BF51CCA6FE900B3CF63 /* TraktWatchedShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98791CBF495300744566 /* TraktWatchedShow.swift */; };
-		A7582BF61CCA6FE900B3CF63 /* TraktWatchedSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF987B1CBF495D00744566 /* TraktWatchedSeason.swift */; };
-		A7582BF71CCA6FE900B3CF63 /* TraktWatchedEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF987D1CBF49C600744566 /* TraktWatchedEpisodes.swift */; };
+		A7582BF51CCA6FE900B3CF63 /* TraktWatched.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98791CBF495300744566 /* TraktWatched.swift */; };
 		A7582BF81CCA6FE900B3CF63 /* TraktTrendingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF987F1CBF49E700744566 /* TraktTrendingMovie.swift */; };
 		A7582BF91CCA6FE900B3CF63 /* TraktMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98811CBF49FF00744566 /* TraktMovie.swift */; };
 		A7582BFA1CCA6FE900B3CF63 /* TraktMovieTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF98831CBF4A1C00744566 /* TraktMovieTranslation.swift */; };
@@ -755,9 +749,7 @@
 		A7AF98731CBF48D900744566 /* TraktSeason.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktSeason.swift; sourceTree = "<group>"; };
 		A7AF98751CBF48E200744566 /* TraktEpisode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktEpisode.swift; sourceTree = "<group>"; };
 		A7AF98771CBF490200744566 /* TraktShowTranslation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktShowTranslation.swift; sourceTree = "<group>"; };
-		A7AF98791CBF495300744566 /* TraktWatchedShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktWatchedShow.swift; sourceTree = "<group>"; };
-		A7AF987B1CBF495D00744566 /* TraktWatchedSeason.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktWatchedSeason.swift; sourceTree = "<group>"; };
-		A7AF987D1CBF49C600744566 /* TraktWatchedEpisodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktWatchedEpisodes.swift; sourceTree = "<group>"; };
+		A7AF98791CBF495300744566 /* TraktWatched.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktWatched.swift; sourceTree = "<group>"; };
 		A7AF987F1CBF49E700744566 /* TraktTrendingMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktTrendingMovie.swift; sourceTree = "<group>"; };
 		A7AF98811CBF49FF00744566 /* TraktMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktMovie.swift; sourceTree = "<group>"; };
 		A7AF98831CBF4A1C00744566 /* TraktMovieTranslation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktMovieTranslation.swift; sourceTree = "<group>"; };
@@ -989,9 +981,7 @@
 				A7AF98751CBF48E200744566 /* TraktEpisode.swift */,
 				A7AF98771CBF490200744566 /* TraktShowTranslation.swift */,
 				70005647206BBF47005319DD /* TraktEpisodeTranslation.swift */,
-				A7AF98791CBF495300744566 /* TraktWatchedShow.swift */,
-				A7AF987B1CBF495D00744566 /* TraktWatchedSeason.swift */,
-				A7AF987D1CBF49C600744566 /* TraktWatchedEpisodes.swift */,
+				A7AF98791CBF495300744566 /* TraktWatched.swift */,
 				A79E56161D4E7663009CACC7 /* TraktWatchedProgress.swift */,
 				70393F431F3F4A9100943D34 /* ShowCollectionProgress.swift */,
 			);
@@ -1858,7 +1848,7 @@
 				A72959E825F26FDE00C0EC30 /* BodyPost.swift in Sources */,
 				705462781EF36FA2003BB24B /* FollowRequest.swift in Sources */,
 				70393F2E1F3F2AC500943D34 /* AddToCollectionResult.swift in Sources */,
-				A708073B1D8E1F5A00176B0A /* TraktWatchedShow.swift in Sources */,
+				A708073B1D8E1F5A00176B0A /* TraktWatched.swift in Sources */,
 				706B9EEC20557BA2002B59FC /* URLSessionProtocol.swift in Sources */,
 				700FED1D1F3FB89900169961 /* Movies.swift in Sources */,
 				70D369912066DB0F0008B9D7 /* TraktAttachedMediaItem.swift in Sources */,
@@ -1866,7 +1856,6 @@
 				7078C5551F40FE0C00EC6ABD /* CalendarMovie.swift in Sources */,
 				70C810B51DBAE34800A5AA28 /* TraktCollectedItem.swift in Sources */,
 				70374C291F635E7D00173E12 /* HideItemResult.swift in Sources */,
-				A708073D1D8E1F5A00176B0A /* TraktWatchedEpisodes.swift in Sources */,
 				A70807371D8E1F5A00176B0A /* TraktShow.swift in Sources */,
 				70393F461F3F4A9100943D34 /* ShowCollectionProgress.swift in Sources */,
 				70F7E62D1EF2A3FC0026B8A1 /* Genre.swift in Sources */,
@@ -1884,7 +1873,6 @@
 				A708074F1D8E1F5A00176B0A /* MLKeychain.swift in Sources */,
 				A76FBCAC257EF302009593B2 /* AddToHistoryResult.swift in Sources */,
 				A70807511D8E1F5A00176B0A /* Extensions.swift in Sources */,
-				A708073C1D8E1F5A00176B0A /* TraktWatchedSeason.swift in Sources */,
 				70C5D8A620651A3D002E4356 /* TraktWatchedItem.swift in Sources */,
 				70393F321F3F2B4C00943D34 /* RemoveFromCollectionResult.swift in Sources */,
 				A70807471D8E1F5A00176B0A /* TraktWatching.swift in Sources */,
@@ -1900,7 +1888,7 @@
 			files = (
 				70D369B22066EF6E0008B9D7 /* TraktMostMovie.swift in Sources */,
 				70F7732D1F3C76C60078110E /* Update.swift in Sources */,
-				A7582BF51CCA6FE900B3CF63 /* TraktWatchedShow.swift in Sources */,
+				A7582BF51CCA6FE900B3CF63 /* TraktWatched.swift in Sources */,
 				70393F3D1F3F34C300943D34 /* RemoveFromWatchlistResult.swift in Sources */,
 				A7582C061CCA6FF600B3CF63 /* Person.swift in Sources */,
 				70F7735B1F3DC0E00078110E /* RemoveListItemResult.swift in Sources */,
@@ -1921,7 +1909,6 @@
 				A72959A225F2589500C0EC30 /* DeviceCode.swift in Sources */,
 				70393F451F3F4A9100943D34 /* ShowCollectionProgress.swift in Sources */,
 				A76FBCAB257EF302009593B2 /* AddToHistoryResult.swift in Sources */,
-				A7582BF71CCA6FE900B3CF63 /* TraktWatchedEpisodes.swift in Sources */,
 				70393F391F3F2C4700943D34 /* RemoveRatingsResult.swift in Sources */,
 				70C810B41DBAE34400A5AA28 /* TraktCollectedItem.swift in Sources */,
 				A72959F225F26FFF00C0EC30 /* Languages.swift in Sources */,
@@ -1968,7 +1955,6 @@
 				702631EE1E6682F9006F323B /* TraktWatchedProgress.swift in Sources */,
 				705462771EF36FA2003BB24B /* FollowRequest.swift in Sources */,
 				706B9EEB20557BA2002B59FC /* URLSessionProtocol.swift in Sources */,
-				A7582BF61CCA6FE900B3CF63 /* TraktWatchedSeason.swift in Sources */,
 				70D369902066DB0F0008B9D7 /* TraktAttachedMediaItem.swift in Sources */,
 				7054625E1EF3622A003BB24B /* RatingDistribution.swift in Sources */,
 				7078C5541F40FE0B00EC6ABD /* CalendarMovie.swift in Sources */,
@@ -2010,7 +1996,7 @@
 				705462641EF36598003BB24B /* Episodes.swift in Sources */,
 				703D2EDB1EF147E700CAD268 /* TraktCrewMember.swift in Sources */,
 				B3167ECC2459FDBB00D51968 /* Languages.swift in Sources */,
-				70B8442B1EF0DC4D001BA900 /* TraktWatchedShow.swift in Sources */,
+				70B8442B1EF0DC4D001BA900 /* TraktWatched.swift in Sources */,
 				70B844291EF0DC4D001BA900 /* TraktEpisode.swift in Sources */,
 				70B844281EF0DC4D001BA900 /* TraktSeason.swift in Sources */,
 				703D2EE11EF1490C00CAD268 /* TraktSearchResult.swift in Sources */,
@@ -2034,7 +2020,6 @@
 				70D369932066DE000008B9D7 /* TraktCommentLikedUser.swift in Sources */,
 				70B844251EF0DC4D001BA900 /* TraktMostShow.swift in Sources */,
 				70F773621F3DC8AF0078110E /* Friend.swift in Sources */,
-				70B8442D1EF0DC4D001BA900 /* TraktWatchedEpisodes.swift in Sources */,
 				70F7E6251EF220CF0026B8A1 /* CalendarMovie.swift in Sources */,
 				70F773361F3C80A10078110E /* ListItemPostResult.swift in Sources */,
 				700FED201F3FB96A00169961 /* TraktMovieRelease.swift in Sources */,
@@ -2104,7 +2089,6 @@
 				70B844401EF0E295001BA900 /* TraktUser.swift in Sources */,
 				7054625A1EF35C06003BB24B /* Search.swift in Sources */,
 				70C5D8A420651A34002E4356 /* TraktWatchedItem.swift in Sources */,
-				70B8442C1EF0DC4D001BA900 /* TraktWatchedSeason.swift in Sources */,
 				70B844241EF0DC4D001BA900 /* TraktTrendingShow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

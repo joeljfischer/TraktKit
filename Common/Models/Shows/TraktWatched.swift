@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// A show that the user has started watching.
+/// See `Sync.getWatched()` | https://trakt.docs.apiary.io/reference/sync/get-watched/get-watched
 public struct TraktWatchedShow: Codable, Hashable, Identifiable {
     public var id: Int { show.id }
     
@@ -21,6 +23,9 @@ public struct TraktWatchedShow: Codable, Hashable, Identifiable {
     /// The last time the show was updated. Use this to determine if a full sync of the show is needed.
     public let lastUpdatedAt: Date?
 
+    /// When show progress was last reset. Use this to determine what shows to mark as played based on their last watched time.
+    public let resetAt: Date?
+
     /// The show details
     public let show: TraktShow
 
@@ -29,6 +34,7 @@ public struct TraktWatchedShow: Codable, Hashable, Identifiable {
     
     enum CodingKeys: String, CodingKey {
         case plays
+        case resetAt = "reset_at"
         case lastWatchedAt = "last_watched_at"
         case lastUpdatedAt = "last_updated_at"
         case show
@@ -42,11 +48,35 @@ public struct TraktWatchedShow: Codable, Hashable, Identifiable {
     ///   - lastUpdatedAt: The last time the show was updated. Use this to determine if a full sync of the show is needed.
     ///   - show: The show details
     ///   - seasons: Season and episode information. Use extended info noSeasons to exclude this information.
-    public init(plays: Int, lastWatchedAt: Date?, lastUpdatedAt: Date?, show: TraktShow, seasons: [TraktWatchedSeason]?) {
+    public init(plays: Int, lastWatchedAt: Date?, lastUpdatedAt: Date?, resetAt: Date? = nil, show: TraktShow, seasons: [TraktWatchedSeason]?) {
         self.plays = plays
         self.lastWatchedAt = lastWatchedAt
         self.lastUpdatedAt = lastUpdatedAt
+        self.resetAt = resetAt
         self.show = show
         self.seasons = seasons
+    }
+}
+
+public struct TraktWatchedSeason: Codable, Hashable, Identifiable {
+    public var id: Int { number }
+
+    // Extended: Min
+    public let number: Int // Season number
+    public let episodes: [TraktWatchedEpisode]
+}
+
+public struct TraktWatchedEpisode: Codable, Hashable, Identifiable {
+    public var id: Int { number }
+
+    // Extended: Min
+    public let number: Int
+    public let plays: Int
+    public let lastWatchedAt: Date?
+
+    enum CodingKeys: String, CodingKey {
+        case number
+        case plays
+        case lastWatchedAt = "last_watched_at"
     }
 }
