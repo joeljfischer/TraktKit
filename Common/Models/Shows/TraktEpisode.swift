@@ -21,6 +21,7 @@ public struct TraktEpisode: Codable, Hashable, Identifiable {
     public let overview: String?
     public let rating: Double?
     public let votes: Int?
+    public let runtime: Int?
     public let firstAired: Date?
     public let updatedAt: Date?
     public let availableTranslations: [String]?
@@ -34,6 +35,7 @@ public struct TraktEpisode: Codable, Hashable, Identifiable {
         case overview
         case rating
         case votes
+        case runtime
         case firstAired = "first_aired"
         case updatedAt = "updated_at"
         case availableTranslations = "available_translations"
