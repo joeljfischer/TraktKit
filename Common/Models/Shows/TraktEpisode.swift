@@ -40,4 +40,18 @@ public struct TraktEpisode: Codable, Hashable, Identifiable {
         case updatedAt = "updated_at"
         case availableTranslations = "available_translations"
     }
+
+    public init(season: Int, number: Int, title: String? = nil, ids: EpisodeId, overview: String? = nil, rating: Double? = nil, votes: Int? = nil, runtime: Int? = nil, firstAired: Date? = nil, updatedAt: Date? = nil, availableTranslations: [String]? = nil) {
+        self.season = season
+        self.number = number
+        self.title = title
+        self.ids = ids
+        self.overview = overview
+        self.rating = rating
+        self.votes = votes
+        self.runtime = runtime
+        self.firstAired = firstAired
+        self.updatedAt = updatedAt
+        self.availableTranslations = availableTranslations
+    }
 }
