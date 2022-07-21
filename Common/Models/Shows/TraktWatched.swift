@@ -64,6 +64,11 @@ public struct TraktWatchedSeason: Codable, Hashable, Identifiable {
     // Extended: Min
     public let number: Int // Season number
     public let episodes: [TraktWatchedEpisode]
+
+    public init(number: Int, episodes: [TraktWatchedEpisode]) {
+        self.number = number
+        self.episodes = episodes
+    }
 }
 
 public struct TraktWatchedEpisode: Codable, Hashable, Identifiable {
@@ -78,5 +83,11 @@ public struct TraktWatchedEpisode: Codable, Hashable, Identifiable {
         case number
         case plays
         case lastWatchedAt = "last_watched_at"
+    }
+
+    public init(number: Int, plays: Int, lastWatchedAt: Date? = nil) {
+        self.number = number
+        self.plays = plays
+        self.lastWatchedAt = lastWatchedAt
     }
 }
