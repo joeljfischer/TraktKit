@@ -44,6 +44,13 @@ public struct SeasonId: Codable, Hashable {
     public let tvdb: Int?
     public let tmdb: Int?
     public let tvRage: Int?
+
+    public init(trakt: Int, tvdb: Int? = nil, tmdb: Int? = nil, tvRage: Int? = nil) {
+        self.trakt = trakt
+        self.tvdb = tvdb
+        self.tmdb = tmdb
+        self.tvRage = tvRage
+    }
     
     enum CodingKeys: String, CodingKey {
         case trakt
@@ -59,6 +66,14 @@ public struct EpisodeId: Codable, Hashable {
     public let imdb: String?
     public let tmdb: Int?
     public let tvRage: Int?
+
+    public init(trakt: Int, tvdb: Int? = nil, imdb: String? = nil, tmdb: Int? = nil, tvRage: Int? = nil) {
+        self.trakt = trakt
+        self.tvdb = tvdb
+        self.imdb = imdb
+        self.tmdb = tmdb
+        self.tvRage = tvRage
+    }
     
     enum CodingKeys: String, CodingKey {
         case trakt
@@ -72,6 +87,11 @@ public struct EpisodeId: Codable, Hashable {
 public struct ListId: Codable, Hashable {
     public let trakt: Int
     public let slug: String
+
+    public init(trakt: Int, slug: String) {
+        self.trakt = trakt
+        self.slug = slug
+    }
     
     enum CodingKeys: String, CodingKey {
         case trakt
@@ -89,6 +109,16 @@ public struct TraktStats: Codable, Hashable {
     public let comments: Int
     public let lists: Int
     public let votes: Int
+
+    public init(watchers: Int, plays: Int, collectors: Int, collectedEpisodes: Int? = nil, comments: Int, lists: Int, votes: Int) {
+        self.watchers = watchers
+        self.plays = plays
+        self.collectors = collectors
+        self.collectedEpisodes = collectedEpisodes
+        self.comments = comments
+        self.lists = lists
+        self.votes = votes
+    }
     
     enum CodingKeys: String, CodingKey {
         case watchers
