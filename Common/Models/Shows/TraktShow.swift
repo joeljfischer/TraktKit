@@ -14,7 +14,7 @@ public struct TraktShow: Codable, Hashable, Identifiable {
     // Extended: Min
     public let title: String
     public let year: Int?
-    public let providerIds: ProviderIds
+    public let providerIds: ShowIds
     
     // Extended: Full
     public let overview: String?
@@ -59,7 +59,7 @@ public struct TraktShow: Codable, Hashable, Identifiable {
         case airedEpisodes = "aired_episodes"
     }
 
-    public init(title: String, year: Int?, ids: ProviderIds, overview: String? = nil, firstAired: Date? = nil, airs: Airs? = nil, runtime: Int? = nil, certification: String? = nil, network: String? = nil, country: String? = nil, trailer: URL? = nil, homepage: URL? = nil, status: ShowStatus? = nil, rating: Double? = nil, votes: Int? = nil, updatedAt: Date? = nil, language: String? = nil, availableTranslations: [String]? = nil, genres: [String]? = nil, airedEpisodes: Int? = nil) {
+    public init(title: String, year: Int?, ids: ShowIds, overview: String? = nil, firstAired: Date? = nil, airs: Airs? = nil, runtime: Int? = nil, certification: String? = nil, network: String? = nil, country: String? = nil, trailer: URL? = nil, homepage: URL? = nil, status: ShowStatus? = nil, rating: Double? = nil, votes: Int? = nil, updatedAt: Date? = nil, language: String? = nil, availableTranslations: [String]? = nil, genres: [String]? = nil, airedEpisodes: Int? = nil) {
         self.title = title
         self.year = year
         self.providerIds = ids
@@ -86,7 +86,7 @@ public struct TraktShow: Codable, Hashable, Identifiable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         title = try container.decode(String.self, forKey: CodingKeys.title)
         year = try container.decodeIfPresent(Int.self, forKey: CodingKeys.year)
-        providerIds = try container.decode(ProviderIds.self, forKey: CodingKeys.providerIds)
+        providerIds = try container.decode(ShowIds.self, forKey: CodingKeys.providerIds)
         
         overview = try container.decodeIfPresent(String.self, forKey: CodingKeys.overview)
         firstAired = try container.decodeIfPresent(Date.self, forKey: CodingKeys.firstAired)

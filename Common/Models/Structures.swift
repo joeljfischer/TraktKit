@@ -12,13 +12,20 @@ public typealias RawJSON = [String: Any] // Dictionary
 
 // MARK: - TV & Movies
 
-public struct ProviderIds: Codable, Hashable {
-    public let trakt: Int
-    public let slug: String
-    public let tvdb: Int?
-    public let imdb: String?
-    public let tmdb: Int?
-    public let tvRage: Int?
+public struct ShowIds: Codable, Hashable {
+    public typealias TraktId = Int
+    public typealias TraktSlug = String
+    public typealias TVDBId = Int
+    public typealias IMDBId = String
+    public typealias TMDBId = Int
+    public typealias TVRageId = Int
+
+    public let trakt: TraktId
+    public let slug: TraktSlug
+    public let tvdb: TVDBId?
+    public let imdb: IMDBId?
+    public let tmdb: TMDBId?
+    public let tvRage: TVRageId?
     
     enum CodingKeys: String, CodingKey {
         case trakt
@@ -40,10 +47,15 @@ public struct ProviderIds: Codable, Hashable {
 }
 
 public struct SeasonId: Codable, Hashable {
-    public let trakt: Int
-    public let tvdb: Int?
-    public let tmdb: Int?
-    public let tvRage: Int?
+    public typealias TraktId = Int
+    public typealias TVDBId = Int
+    public typealias TMDBId = Int
+    public typealias TVRageId = Int
+
+    public let trakt: TraktId
+    public let tvdb: TVDBId?
+    public let tmdb: TMDBId?
+    public let tvRage: TVRageId?
 
     public init(trakt: Int, tvdb: Int? = nil, tmdb: Int? = nil, tvRage: Int? = nil) {
         self.trakt = trakt
@@ -61,11 +73,17 @@ public struct SeasonId: Codable, Hashable {
 }
 
 public struct EpisodeId: Codable, Hashable {
-    public let trakt: Int
-    public let tvdb: Int?
-    public let imdb: String?
-    public let tmdb: Int?
-    public let tvRage: Int?
+    public typealias TraktId = Int
+    public typealias TVDBId = Int
+    public typealias IMDBId = String
+    public typealias TMDBId = Int
+    public typealias TVRageId = Int
+
+    public let trakt: TraktId
+    public let tvdb: TVDBId?
+    public let imdb: IMDBId?
+    public let tmdb: TMDBId?
+    public let tvRage: TVRageId?
 
     public init(trakt: Int, tvdb: Int? = nil, imdb: String? = nil, tmdb: Int? = nil, tvRage: Int? = nil) {
         self.trakt = trakt
@@ -85,6 +103,9 @@ public struct EpisodeId: Codable, Hashable {
 }
 
 public struct ListId: Codable, Hashable {
+    public typealias TraktId = Int
+    public typealias TraktSlug = String
+
     public let trakt: Int
     public let slug: String
 
