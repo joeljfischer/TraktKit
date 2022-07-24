@@ -11,7 +11,6 @@ import Foundation
 /// Watched progress. Shows/Progress/Watched
 /// https://trakt.docs.apiary.io/reference/shows/watched-progress/get-show-watched-progress
 public struct TraktShowWatchedProgress: Codable, Hashable {
-    
     // Extended: Min
     /// Number of episodes that have aired
     public let aired: Int
@@ -37,6 +36,7 @@ public struct TraktShowWatchedProgress: Codable, Hashable {
 /// Watched progress of a season. From `TraktShowWatchedProgress`.
 /// https://trakt.docs.apiary.io/reference/shows/watched-progress/get-show-watched-progress
 public struct TraktSeasonWatchedProgress: Codable, Hashable {
+    public var id: Int { number }
     
     // Extended: Min
     /// Season number
@@ -52,9 +52,10 @@ public struct TraktSeasonWatchedProgress: Codable, Hashable {
 /// Watched progress of a season. From `TraktSeasonWatchedProgress`.
 /// https://trakt.docs.apiary.io/reference/shows/watched-progress/get-show-watched-progress
 public struct TraktEpisodeWatchedProgress: Codable, Hashable {
-    
+    public var id: Int { number }
+
     // Extended: Min
-    /// Season number
+    /// The episode number
     public let number: Int
     /// Has this episode been watched
     public let completed: Bool
