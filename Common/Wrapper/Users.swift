@@ -63,7 +63,7 @@ extension TraktManager {
     - parameter id: ID of the follower request. Example: `123`.
      */
     @discardableResult
-    public func approveFollowRequest(requestID id: NSNumber, completion: @escaping ObjectCompletionHandler<FollowResult>) -> URLSessionDataTaskProtocol? {
+    public func approveFollowRequest(requestID id: Int, completion: @escaping ObjectCompletionHandler<FollowResult>) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "users/requests/\(id)",
                                          withQuery: [:],
                                          isAuthorized: true,
@@ -79,7 +79,7 @@ extension TraktManager {
      - parameter id: ID of the follower request. Example: `123`.
      */
     @discardableResult
-    public func denyFollowRequest(requestID id: NSNumber, completion: @escaping SuccessCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func denyFollowRequest(requestID id: Int, completion: @escaping SuccessCompletionHandler) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "users/requests/\(id)",
                                            withQuery: [:],
                                            isAuthorized: true,
@@ -589,7 +589,7 @@ extension TraktManager {
     🔓 OAuth Optional
     */
     @discardableResult
-    public func getUserRatings(username: String = "me", type: Type? = nil, rating: NSNumber? = nil, completion: @escaping RatingsCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getUserRatings(username: String = "me", type: Type? = nil, rating: Int? = nil, completion: @escaping RatingsCompletionHandler) -> URLSessionDataTaskProtocol? {
         
         var path = "users/\(username)/ratings"
 

@@ -24,7 +24,7 @@ public extension TraktManager {
         /**
          4 digit year.
          */
-        case year(year: NSNumber)
+        case year(year: Int)
         /**
          Genre slugs.
          */
@@ -39,11 +39,11 @@ public extension TraktManager {
         /**
          Range in minutes.
          */
-        case runtimes(runtimes: (lower: NSNumber, upper: NSNumber))
+        case runtimes(runtimes: (lower: Int, upper: Int))
         /**
          Range between `0` and `100`.
          */
-        case ratings(ratings: (lower: NSNumber, upper: NSNumber))
+        case ratings(ratings: (lower: Int, upper: Int))
         
         // FilterType
         public func value() -> (key: String, value: String) {

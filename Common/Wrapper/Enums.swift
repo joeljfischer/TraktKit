@@ -127,11 +127,11 @@ public enum SearchType: String {
 
 /// Type of ID used for look up
 public enum LookupType {
-    case trakt(id: NSNumber)
+    case trakt(id: Int)
     case imdb(id: String)
-    case tmdb(id: NSNumber)
-    case tvdb(id: NSNumber)
-    case tvRage(id: NSNumber)
+    case tmdb(id: Int)
+    case tvdb(id: Int)
+    case tvRage(id: Int)
 
     var name: String {
         switch self {
