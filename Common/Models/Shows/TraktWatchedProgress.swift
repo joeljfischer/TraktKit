@@ -35,7 +35,7 @@ public struct TraktShowWatchedProgress: Codable, Hashable {
 
 /// Watched progress of a season. From `TraktShowWatchedProgress`.
 /// https://trakt.docs.apiary.io/reference/shows/watched-progress/get-show-watched-progress
-public struct TraktSeasonWatchedProgress: Codable, Hashable {
+public struct TraktSeasonWatchedProgress: Codable, Hashable, Identifiable {
     public var id: Int { number }
     
     // Extended: Min
@@ -51,7 +51,7 @@ public struct TraktSeasonWatchedProgress: Codable, Hashable {
 
 /// Watched progress of a season. From `TraktSeasonWatchedProgress`.
 /// https://trakt.docs.apiary.io/reference/shows/watched-progress/get-show-watched-progress
-public struct TraktEpisodeWatchedProgress: Codable, Hashable {
+public struct TraktEpisodeWatchedProgress: Codable, Hashable, Identifiable {
     public var id: Int { number }
 
     // Extended: Min
