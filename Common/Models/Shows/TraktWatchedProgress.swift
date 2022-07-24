@@ -22,6 +22,15 @@ public struct TraktShowWatchedProgress: Codable, Hashable {
     public let resetAt: Date?
     public let seasons: [TraktSeasonWatchedProgress]
     public let nextEpisode: TraktEpisode?
+
+    public init(aired: Int, completed: Int, lastWatchedAt: Date? = nil, resetAt: Date? = nil, seasons: [TraktSeasonWatchedProgress], nextEpisode: TraktEpisode? = nil) {
+        self.aired = aired
+        self.completed = completed
+        self.lastWatchedAt = lastWatchedAt
+        self.resetAt = resetAt
+        self.seasons = seasons
+        self.nextEpisode = nextEpisode
+    }
     
     enum CodingKeys: String, CodingKey {
         case aired
@@ -47,6 +56,14 @@ public struct TraktSeasonWatchedProgress: Codable, Hashable, Identifiable {
     public let completed: Int
     public let title: String?
     public let episodes: [TraktEpisodeWatchedProgress]
+
+    public init(number: Int, aired: Int, completed: Int, title: String? = nil, episodes: [TraktEpisodeWatchedProgress]) {
+        self.number = number
+        self.aired = aired
+        self.completed = completed
+        self.title = title
+        self.episodes = episodes
+    }
 }
 
 /// Watched progress of a season. From `TraktSeasonWatchedProgress`.
@@ -61,6 +78,12 @@ public struct TraktEpisodeWatchedProgress: Codable, Hashable, Identifiable {
     public let completed: Bool
     /// When the last episode was watched
     public let lastWatchedAt: Date?
+
+    public init(number: Int, completed: Bool, lastWatchedAt: Date? = nil) {
+        self.number = number
+        self.completed = completed
+        self.lastWatchedAt = lastWatchedAt
+    }
     
     enum CodingKeys: String, CodingKey {
         case number
