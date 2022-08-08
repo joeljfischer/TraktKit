@@ -21,7 +21,7 @@ extension TraktManager {
      
      */
     @discardableResult
-    public func getSeasons<T: CustomStringConvertible>(showID id: T, extended: [ExtendedType] = [.min], completion: @escaping SeasonsCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getSeasons(showID id: ShowIds.TraktId, extended: [ExtendedType] = [.min], completion: @escaping SeasonsCompletionHandler) -> URLSessionDataTaskProtocol? {
         guard var request = mutableRequest(forPath: "shows/\(id)/seasons",
                                            withQuery: ["extended": extended.queryString()],
                                            isAuthorized: false,
@@ -41,7 +41,7 @@ extension TraktManager {
      ✨ Extended
      */
     @discardableResult
-    public func getEpisodesForSeason<T: CustomStringConvertible>(showID id: T, season: Int, translatedInto language: String? = nil, extended: [ExtendedType] = [.min], completion: @escaping EpisodesCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getEpisodesForSeason(showID id: ShowIds.TraktId, season: Int, translatedInto language: String? = nil, extended: [ExtendedType] = [.min], completion: @escaping EpisodesCompletionHandler) -> URLSessionDataTaskProtocol? {
 
         var query = ["extended": extended.queryString()]
         query["translations"] = language
@@ -64,7 +64,7 @@ extension TraktManager {
      📄 Pagination
      */
     @discardableResult
-    public func getAllSeasonComments<T: CustomStringConvertible>(showID id: T, season: Int, pagination: Pagination? = nil, completion: @escaping CommentsCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getAllSeasonComments(showID id: ShowIds.TraktId, season: Int, pagination: Pagination? = nil, completion: @escaping CommentsCompletionHandler) -> URLSessionDataTaskProtocol? {
         var query: [String: String] = [:]
 
         // pagination
@@ -91,7 +91,7 @@ extension TraktManager {
      📄 Pagination
      */
     @discardableResult
-    public func getListsContainingSeason<T: CustomStringConvertible>(showID id: T, season: Int, listType: ListType? = nil, sortBy: ListSortType? = nil, pagination: Pagination? = nil, completion: @escaping paginatedCompletionHandler<TraktList>) -> URLSessionDataTaskProtocol? {
+    public func getListsContainingSeason(showID id: ShowIds.TraktId, season: Int, listType: ListType? = nil, sortBy: ListSortType? = nil, pagination: Pagination? = nil, completion: @escaping paginatedCompletionHandler<TraktList>) -> URLSessionDataTaskProtocol? {
         var path = "shows/\(id)/seasons/\(season)/lists"
         if let listType = listType {
             path += "/\(listType)"
@@ -124,7 +124,7 @@ extension TraktManager {
      Returns rating (between 0 and 10) and distribution for a season.
      */
     @discardableResult
-    public func getSeasonRatings<T: CustomStringConvertible>(showID id: T, season: Int, completion: @escaping RatingDistributionCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getSeasonRatings(showID id: ShowIds.TraktId, season: Int, completion: @escaping RatingDistributionCompletionHandler) -> URLSessionDataTaskProtocol? {
         guard var request = mutableRequest(forPath: "shows/\(id)/seasons/\(season)/ratings",
                                            withQuery: [:],
                                            isAuthorized: false,
@@ -141,7 +141,7 @@ extension TraktManager {
      Returns lots of season stats.
      */
     @discardableResult
-    public func getSeasonStatistics<T: CustomStringConvertible>(showID id: T, season: Int, completion: @escaping statsCompletionHandler) -> URLSessionDataTaskProtocol? {
+    public func getSeasonStatistics(showID id: ShowIds.TraktId, season: Int, completion: @escaping statsCompletionHandler) -> URLSessionDataTaskProtocol? {
         guard var request = mutableRequest(forPath: "shows/\(id)/seasons/\(season)/stats",
                                            withQuery: [:],
                                            isAuthorized: false,
@@ -158,7 +158,7 @@ extension TraktManager {
      Returns all users watching this season right now.
      */
     @discardableResult
-    public func getUsersWatchingSeasons<T: CustomStringConvertible>(showID id: T, season: Int, completion: @escaping ObjectsCompletionHandler<User>) -> URLSessionDataTaskProtocol? {
+    public func getUsersWatchingSeasons(showID id: ShowIds.TraktId, season: Int, completion: @escaping ObjectsCompletionHandler<User>) -> URLSessionDataTaskProtocol? {
         guard var request = mutableRequest(forPath: "shows/\(id)/seasons/\(season)/watching",
                                            withQuery: [:],
                                            isAuthorized: false,
@@ -182,7 +182,7 @@ extension TraktManager {
      **Note**: This returns a lot of data, so please only use this extended parameter if you actually need it!
      */
     @discardableResult
-    public func getPeopleInSeason<T: CustomStringConvertible>(showID id: T, season: Int, extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<CastAndCrew<TVCastMember, TVCrewMember>>) -> URLSessionDataTaskProtocol? {
+    public func getPeopleInSeason(showID id: ShowIds.TraktId, season: Int, extended: [ExtendedType] = [.min], completion: @escaping ObjectCompletionHandler<CastAndCrew<TVCastMember, TVCrewMember>>) -> URLSessionDataTaskProtocol? {
         guard let request = mutableRequest(forPath: "shows/\(id)/seasons/\(season)/people",
             withQuery: ["extended": extended.queryString()],
             isAuthorized: false,
