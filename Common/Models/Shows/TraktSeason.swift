@@ -26,6 +26,19 @@ public struct TraktSeason: Codable, Hashable, Identifiable {
     
     // Extended: Episodes
     public let episodes: [TraktEpisode]?
+
+    public init(number: Int, ids: SeasonId, rating: Double? = nil, votes: Int? = nil, episodeCount: Int? = nil, airedEpisodes: Int? = nil, title: String? = nil, overview: String? = nil, firstAired: Date? = nil, episodes: [TraktEpisode]? = nil) {
+        self.number = number
+        self.ids = ids
+        self.rating = rating
+        self.votes = votes
+        self.episodeCount = episodeCount
+        self.airedEpisodes = airedEpisodes
+        self.title = title
+        self.overview = overview
+        self.firstAired = firstAired
+        self.episodes = episodes
+    }
     
     enum CodingKeys: String, CodingKey {
         case number
