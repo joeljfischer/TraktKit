@@ -8,7 +8,8 @@
 
 import Foundation
 
-public struct TraktSeason: Codable, Hashable {
+public struct TraktSeason: Codable, Hashable, Identifiable {
+    public var id: SeasonId.TraktId { ids.trakt }
     
     // Extended: Min
     public let number: Int
