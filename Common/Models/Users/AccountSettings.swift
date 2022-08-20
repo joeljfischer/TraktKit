@@ -12,7 +12,7 @@ public struct AccountSettings: Codable, Hashable {
     public let user: User
     public let connections: Connections
     public let account: Account
-    public let sharingText: SharingText
+    public let sharingText: SharingText?
     public let limits: Limits
     
     public struct Connections: Codable, Hashable {
